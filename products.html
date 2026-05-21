@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Products</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<div id="cartPanel">
+  
+  <div class="cart-header">
+    <h2>🛒 Your Cart</h2>
+    <button onclick="toggleCart()">✖</button>
+  </div>
+
+  <div id="cartItems"></div>
+
+  <h3 id="panelTotal">Total: ₹0</h3>
+  <button class="order-btn" onclick="placeOrder()">Order Now</button>
+</div>
+
+<button id="openCartBtn" onclick="toggleCart()">🛒 View Cart</button>
+<body>
+<h1>Our Products</h1>
+
+<input type="text" id="searchInput" placeholder="Search products..."  />
+<select id="filterCategory">
+  <option value="all">All</option>
+  <option value="Fruits">🍎Fruits</option>
+  <option value="Dairy">🥛Dairy</option>
+  <option value="Beverages">🍸Beverages</option>
+  <option value="Bakery">🍪Bakery</option>
+  <option value="Grains">🌽Grains</option>
+  <option value="Sweeteners">🧁Sweeteners</option>
+  <option value="Oils">🍾Edible oils</option>
+</select>
+
+<button id="offersBtn" onclick="location.href='offers.html'">View Special Offers 🎁</button>
+<div class="section">
+<h1>🍎Fruits & Vegetables</h1>
+<div class="cards">
+    <div class="card" data-name="Fresh Apples" data-price="200" data-category="Fruits" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/apples.png" alt="Apples">"><h3>Fresh Apples</h3><p>Crisp and naturally sweet</p><p>₹200 per kg</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Organic Bananas" data-price="73" data-category="Fruits" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/bananas.png"><h3>Organic Bananas</h3><p>Healthy and energy packed</p><p>₹73 per kg</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Green Peas" data-price="76" data-category="Fruits" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/peas.png"><h3>Grean Peas</h3><p>Healthy</p><p>₹76 per kg</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Kiwi" data-price="86" data-category="Fruits" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/kiwi.png"><h3>Kiwi</h3><p>Rich in Vitamin C,K,E</p><p>₹86</p><p>3 pcs</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Grapes" data-price="100" data-category="Fruits" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/grapes.png"><h3>Grapes</h3><p>Juicy and Tasty</p><p>₹100 per kg</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+</div>
+</div>
+
+<div class="section">
+<h1>🥛Dairy Products</h1>
+<div class="cards">
+    <div class="card" data-name="Fresh Milk" data-price="52" data-category="Dairy" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/milk.jpg"><h3>Fresh Milk</h3><p>Pure and nutritious</p><p>₹52 per litre</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Farm Eggs" data-price="60" data-category="Dairy">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/eggs.jpg"><h3>Farm Eggs</h3><p>Rich in protein</p><p>₹60 per Dozen</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Yogurt" data-price="90" data-category="Dairy" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/yogurt.jpg"><h3>Yogurt</h3><p>Culture you can taste</p><p>₹90 per kg</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Paneer" data-price="92" data-category="Dairy" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/panner.jpg"><h3>Paneer</h3><p>Rich in protein</p><p>₹92</p><p>200 gms</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+</div>
+</div>
+
+<div class="section">
+<h1>🍸Beverages</h1>
+<div class="cards">
+    <div class="card" data-name="Premium Tea" data-price="325" data-category="Beverages" data-type="veg">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/tea.jpg"><h3>Premium Tea</h3><p>Refreshing and aromatic</p><p>₹325 per kg</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Instant Coffee" data-price="233" data-category="Beverages" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/coffee.jpg"><h3>Instant Coffee</h3><p>Strong and energizing</p><p>₹233</p><p>100 gms</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Green Tea" data-price="190" data-category="Beverages" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/greentea.jpg"><h3>Green Tea</h3><p>Health and Wellness</p><p>₹190</p><p>25 bags</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Fruit Juice" data-price="110" data-category="Beverages" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/juice.jpg"><h3>Fruit Juice</h3><p>Ready to drink</p><p>₹110 per litre</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Coconut Water" data-price="50" data-category="Beverages" data-type="veg diet">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/coconutwater.jpg"><h3>Coconut Water</h3><p>Natural Hydration</p><p>₹50</p><p>200 ml</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+</div>
+</div>
+
+<div class="section">
+<h1>🍪Bakery</h1>
+<div class="cards">
+    <div class="card" data-name="Whole Wheat Bread" data-price="45" data-category="Bakery" data-type="veg"> 
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/bread.jpg"><h3>Whole Wheat Bread</h3><p>Soft and freshly baked</p><p>₹45</p><p>400 gms</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Fruit Cake" data-price="70" data-category="Bakery"  data-type="veg">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/fruitcake.jpg"><h3>Fruit cake</h3><p>freshly baked</p><p>₹70</p><p>200 gms</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Butter Cookies" data-price="130" data-category="Bakery" data-type="veg">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/butter.jpg"><h3>Butter cookies</h3><p>freshly baked</p><p>₹130</p><p>200 gms</p>
+      <button class="wishlist-btn">🤍</button>
+      <button class="add-btn">Add to cart</button>
+    </div>
+</div>
+</div>
+
+<div class="section">
+<h1>🧁Sweeteners</h1>
+<div class="cards">
+    <div class="card" data-name="Refined Sugar" data-price="45" data-category="Sweeteners" data-type="veg">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/sugar.jpg" alt="Sugar">
+        <h3>Refined Sugar</h3>
+        <p>Fine and pure crystals</p>
+        <p>₹45 per kg</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Jaggery" data-price="65" data-category="Sweeteners" data-type="veg  diet">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/jaggery.jpg" alt="Jaggery">
+        <h3>Jaggery</h3>
+        <p>Pure</p>
+        <p>₹65 per kg</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Honey" data-price="250" data-category="Sweeteners" data-type="veg diet">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/honey.jpg" alt="Honey">
+        <h3>Honey</h3>
+        <p>Fine and pure</p>
+        <p>₹250</p>
+        <p>500 gms</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Coconut Sugar" data-price="250" data-category="Sweeteners" data-type="veg">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/coconutsugar.jpg" alt="Coconut Sugar">
+        <h3>Coconut Sugar</h3>
+        <p>Naturally sweet</p>
+        <p>₹250</p>
+        <p>250 gms</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Maple Syrup" data-price="550" data-category="Sweeteners" data-type="veg">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/syrup.jpg" alt="Maple Syrup">
+        <h3>Maple Syrup</h3>
+        <p>Natural and Pure</p>
+        <p>₹550</p>
+        <p>250 ml</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+</div>
+</div>
+
+<div class="section">
+<h1>🌽Grains</h1>
+<div class="cards">
+    <div class="card" data-name="Basmati Rice" data-price="75" data-category="Grains" data-type="veg">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/rice.jpg" alt="Rice">
+        <h3>Basmati Rice</h3>
+        <p>Premium quality grains</p>
+        <p>₹75 per kg</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Wheat" data-price="32" data-category="Grains" data-type="veg diet">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/wheat.jpg" alt="Wheat">
+        <h3>Wheat</h3>
+        <p>Premium quality grains</p>
+        <p>₹32 per kg</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+</div>
+</div>
+
+<div class="section">
+<h1>🍾Edible Oils</h1>
+<div class="cards">
+    <div class="card" data-name="Cooking Oil" data-price="135" data-category="Oils" data-type="veg">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/oil.jpg" alt="Cooking Oil">
+        <h3>Cooking Oil</h3>
+        <p>Healthy and refined</p>
+        <p>₹135 per litre</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Mustard Oil" data-price="145" data-category="Oils" data-type="veg diet">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/mustard.jpg" alt="Mustard Oil">
+        <h3>Mustard Oil</h3>
+        <p>Healthy and refined</p>
+        <p>₹145 per litre</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Olive Oil" data-price="800" data-category="Oils" data-type="veg diet">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/olive.jpg" alt="Olive Oil">
+        <h3>Olive Oil</h3>
+        <p>Healthy and refined</p>
+        <p>₹800 per litre</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+</div>
+</div>
+
+<div class="section">
+<h1>Masala</h1>
+<div class="cards">
+    <div class="card" data-name="Turmeric" data-price="32" data-category="Masala" data-type="veg">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/iwt/turmeric.jpg" alt="Turmeric">
+        <h3>Turmeric</h3>
+        <p>Organic</p>
+        <p>₹32 100  gms</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Red chilli powder" data-price="53" data-category="Masala" data-type="veg">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/iwt/redchilli.jpg" alt="Red chilli powder">
+        <h3>Red chilli powder</h3>
+        <p>₹53 100 gms</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Coriander Powder" data-price="62" data-category="Masala" data-type="veg">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/iwt/coriander.jpg" alt="Coriander Powder">
+        <h3>Coriander Powder</h3>
+        <p>₹62 200 gms</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Chat masala" data-price="87" data-category="Masala" data-type="veg">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/iwt/chatmasala.jpg" alt="Chat masala">
+        <h3>Chat masala</h3>
+        <p>₹87 100 gms</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+
+    <div class="card" data-name="Garam masala" data-price="115" data-category="Masala" data-type="veg">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/iwt/garammasala.jpg" alt="Garam masala">
+        <h3>Garam masala</h3>
+        <p>₹115 100 gms</p>
+        <button class="wishlist-btn">🤍</button>
+        <button class="add-btn">Add to cart</button>
+    </div>
+</div>
+</div>
+<script>
+/* ✅ GET TYPE FROM URL (veg / diet / null) */
+const params = new URLSearchParams(window.location.search);
+const type = params.get("type");
+
+let cart = [];
+
+/* ✅ SEARCH + CATEGORY FILTER EVENTS */
+document.getElementById('searchInput').addEventListener('input', applyFilters);
+document.getElementById('filterCategory').addEventListener('change', applyFilters);
+
+/* ✅ MAIN FILTER FUNCTION (SEARCH + CATEGORY + VEG) */
+function applyFilters() {
+  let searchValue = document.getElementById('searchInput').value.toLowerCase();
+  let categoryValue = document.getElementById('filterCategory').value;
+
+  document.querySelectorAll('.section').forEach(section => {
+
+    let cards = section.querySelectorAll('.card');
+    let visibleCount = 0;
+
+    cards.forEach(card => {
+      let name = card.dataset.name.toLowerCase();
+      let category = card.dataset.category;
+      let itemType = card.dataset.type || "all";
+
+      let matchSearch = name.includes(searchValue);
+      let matchCategory = (categoryValue === "all" || category === categoryValue);
+      let matchType = (!type || itemType.includes(type));
+
+      if (matchSearch && matchCategory && matchType) {
+        card.style.display = "block";
+        visibleCount++;
+      } else {
+        card.style.display = "none";
+      }
+    });
+
+    /* ✅ SHOW / HIDE SECTION */
+    section.style.display = (visibleCount > 0) ? "block" : "none";
+  });
+}
+
+/* ✅ RUN FILTER ON PAGE LOAD */
+applyFilters();
+
+/* ================= CART SYSTEM ================= */
+
+/* ADD TO CART */
+document.addEventListener("click", function(e){
+  if(e.target.classList.contains("add-btn")){
+
+    let card = e.target.closest(".card");
+    let name = card.dataset.name;
+    let price = parseInt(card.dataset.price);
+
+    let item = cart.find(i => i.name === name);
+
+    if(item){
+      item.quantity++;
+    } else {
+      cart.push({name, price, quantity: 1});
+    }
+
+    renderCart();
+  }
+});
+
+/* RENDER CART */
+function renderCart(){
+  let cartDiv = document.getElementById("cartItems");
+  let total = 0;
+  cartDiv.innerHTML = "";
+
+  cart.forEach((item, index) => {
+    total += item.price * item.quantity;
+
+    cartDiv.innerHTML += `
+      <div class="cart-item">
+        <span class="item-text">
+          ${item.name} - ₹${item.price} × ${item.quantity}
+        </span>
+
+        <div class="cart-actions">
+          <button class="qty-btn" onclick="changeQty(${index},1)">+</button>
+          <button class="qty-btn" onclick="changeQty(${index},-1)">-</button>
+          <button class="remove-btn" onclick="removeItem(${index})">Remove</button>
+        </div>
+      </div>
+    `;
+  });
+
+  document.getElementById("panelTotal").innerText = "Total: ₹" + total;
+}
+
+/* CHANGE QTY */
+function changeQty(index, change){
+  cart[index].quantity += change;
+  if(cart[index].quantity <= 0){
+    cart.splice(index,1);
+  }
+  renderCart();
+}
+
+/* REMOVE ITEM */
+function removeItem(index){
+  cart.splice(index,1);
+  renderCart();
+}
+
+/* TOGGLE CART PANEL */
+function toggleCart(){
+  document.getElementById("cartPanel").classList.toggle("open");
+}
+let wishlist = [];
+
+/* ❤️ HANDLE WISHLIST CLICK */
+document.addEventListener("click", function(e){
+  if(e.target.classList.contains("wishlist-btn")){
+
+    let card = e.target.closest(".card");
+    let name = card.dataset.name;
+
+    if(wishlist.includes(name)){
+      // remove from wishlist
+      wishlist = wishlist.filter(item => item !== name);
+      e.target.textContent = "🤍";
+    } else {
+      // add to wishlist
+      wishlist.push(name);
+      e.target.textContent = "❤️";
+    }
+
+    console.log("Wishlist:", wishlist);
+  }
+});
+
+/* ORDER NOW */
+function placeOrder(){
+
+  if(cart.length === 0){
+    alert("Your cart is empty!");
+    return;
+  }
+
+  // Save order in Application → Local Storage
+  localStorage.setItem("lastOrder", JSON.stringify(cart));
+
+  alert("Order placed successfully!");
+
+  console.log("Saved Order:", cart);
+}
+</script>
+</body>
+</html>

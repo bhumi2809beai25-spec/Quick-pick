@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title width="100%">Quick Pick</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header>
+    <nav>
+      <h1>Quick Pick</h1>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="products.html" target="_blank">Products</a></li>
+        <li><a href="#gallery">Gallery</a></li> 
+        <li><a href="#team">Team</a></li>
+        <li><a href="#blog">Offers</a></li>
+        <li class="dropdown">
+          <a href="#">Meal ▼</a>
+          <ul class="dropdown-menu">
+            <li><a href="products.html?type=veg">Veg</a></li>
+            <li><a href="products.html?type=diet">Diet</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#sign">Sign In</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero">
+    <h2>Your Daily Essentials, Delivered Fast</h2>
+    <p>Fresh groceries and household items at your fingertips.</p>
+    <p>100% Fresh Grocery items</p>
+  </section>
+
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <h2>Store Gallery</h2>
+    <div class="gallery-grid">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/store.jpeg" alt="Store">
+      <img src="c:\Users\ASUS\Downloads\quickpick_508x499.jpeg" alt="Products">
+      <img src="c:\Users\ASUS\Downloads\quickpick_508x499_v3.jpeg" alt="Groceries">
+      <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/products.png" alt="Fresh Items">
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section id="team" class="team">
+    <h2>Meet Our Team</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/storemanager.jpg" alt="Staff">
+        <h3>Amit Sharma</h3>
+        <p>Store Manager ⭐⭐⭐⭐⭐</p>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/customer.jpg" alt="Staff">
+        <h3>Pooja Verma</h3>
+        <p>Customer Support ⭐⭐⭐⭐⭐</p>
+      </div>
+      <div class="card">
+        <img src="https://raw.githubusercontent.com/bhumi2809beai25-spec/Project-pictures/main/inveentory.jpg" alt="Staff">
+        <h3>Ritika Mehta</h3>
+        <p>Inventory Manager ⭐⭐⭐⭐⭐</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Offers -->
+  <section id="blog" class="blog">
+    <h2>Latest Offers</h2>
+    <ul>
+      <li>Flat 20% Off on Fresh Fruits</li>
+      <li>Buy 1 Get 1 Free on Bread</li>
+      <li>Weekend Special Grocery Deals</li>
+      <li>Free Delivery on Orders Above ₹499</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <p>📍 Find us on <a href="https://goo.gl/maps/" target="_blank">Google Maps</a></p>
+  </section>
+
+  <section id="sign">
+  <h2>Sign In</h2>
+
+  <form id="my-form"> 
+    <input type="text" id="name" placeholder="Enter your first name" required>
+    <input type="text" id="name" placeholder="Enter your last name" required>
+    <input type="email" id="email" placeholder="Enter your email" required>
+    <input type="tel" id="user-contact" placeholder="Enter your contact number" required>
+    <input type="text" id="address" placeholder="Enter your address" required>
+    <button type="submit">Submit</button>
+  </form>
+</section>
+
+<script>
+document.getElementById('my-form').addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  // Use the new ID 'user-contact'
+  let name = document.getElementById('name').value.trim();
+  let email = document.getElementById('email').value.trim();
+  let contactValue = document.getElementById('user-contact').value.trim(); // Changed variable name for clarity
+  let address = document.getElementById('address').value.trim();
+
+  let contactpattern = /^[6-9][0-9]{9}$/;
+
+  if (name === "") {
+    alert("Name cannot be empty");
+    return;
+  }
+
+  if (!contactpattern.test(contactValue)) {
+    alert("Enter valid contact number");
+    return;
+  }
+
+  let user = {
+    name: name,
+    email: email,
+    contact: contactValue,
+    address: address
+  };
+
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+  users.push(user);
+  localStorage.setItem("users", JSON.stringify(users));
+
+  alert("Data saved successfully!");
+  document.getElementById('my-form').reset();
+  displayUsers();
+});
+
+function displayUsers() {
+  let users = JSON.parse(localStorage.getItem("users")) || [];
+  let output = "";
+
+  users.forEach((user, index) => {
+    output += `
+      <p>
+        ${user.name} - ${user.contact} - ${user.address}
+      </p>
+    `;
+  });
+
+  document.getElementById("userList").innerHTML = output;
+}
+</script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Quick Pick | Follow us: 
+      <a href="https://facebook.com" target="_blank">Facebook</a> | 
+      <a href="https://instagram.com" target="_blank">Instagram</a> | 
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </p>
+  </footer>
+
+<!-- <div> = container for styling/layout
+<section> = meaningful part of a webpage -->
+</body>
+</html>

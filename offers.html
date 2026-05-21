@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">           <!-- ensures emojis render correctly -->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      /* Using your palette for a smooth gradient background */
+      background: linear-gradient(135deg, #eca59d, #e87d87);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    /* Container to make the offers pop */
+    .offers-card {
+      background-color: white;
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(62, 13, 30, 0.2);
+      border: 2px solid #b4204a;
+      max-width: 450px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .offers-header h2 {
+      color: #3e0d1e; /* Deep Maroon */
+      margin-bottom: 25px;
+      font-size: 28px;
+      border-bottom: 2px solid #e87d87;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+
+    .offers-content ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .offers-content li {
+      font-size: 18px;
+      margin: 15px 0;
+      color: #3e0d1e;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: #fffafa;
+      transition: background 0.3s ease;
+    }
+
+    .offers-content li:hover {
+      background-color: #eca59d; 
+    }
+
+    .offers-content li span {
+      color: #9d0d2f; 
+      font-weight: bold;
+      background-color: rgba(180, 32, 74, 0.1);
+      padding: 4px 10px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="offers-header">
+    <h2>Exclusive Offers</h2>
+  </div>
+  <div class="offers-content">
+    <ul>
+      <li>🍎 Fresh Apples - <span>15% OFF</span></li>                         <!-- span=to style a specific part -->
+      <li>🍌 Organic Bananas - <span>Buy 1 Get 1 Free</span></li>
+      <li>🥛 Fresh Milk - <span>₹10 OFF per litre</span></li>
+      <li>🥚 Farm Eggs - <span>20% OFF</span></li>
+      <li>🍞 Whole Wheat Bread - <span>Free Delivery</span></li>
+    </ul>
+  </div>
+</body>
+</html>
